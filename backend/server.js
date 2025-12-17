@@ -14,9 +14,7 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: process.env.NODE_ENV === 'production' 
-    ? ['https://emporium-frontend.onrender.com', 'https://emporium-frontend.onrender.com/'] 
-    : ['http://localhost:3000'],
+  origin: true, // Allow all origins for now
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
@@ -43,6 +41,22 @@ app.get('/api/health', (req, res) => {
     status: 'healthy',
     timestamp: new Date().toISOString()
   });
+});
+
+// Test route to check products
+app.get('/api/test', async (req, res) => {
+  try {
+    const Product = require('./models/Product');
+    const productCount = await Product.countDocuments();
+    const sampleProducts = await Product.find().limit(3);
+    res.json({
+      message: 'API Test Successful',
+      productCount,
+      sampleProducts: sampleProducts.map(p => ({ name: p.name, price: p.price }))
+    });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
 });
 
 // Basic route
