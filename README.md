@@ -40,7 +40,7 @@ A full-stack e-commerce application built with the MERN stack (MongoDB, Express.
 
 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/mern-ecommerce.git
+git clone https://github.com/taniish25/Emporium-ecommerce.git
 cd mern-ecommerce
 ```
 
