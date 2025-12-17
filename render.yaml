@@ -4,23 +4,27 @@ services:
     name: emporium-backend
     env: node
     plan: free
+    region: oregon
     buildCommand: cd backend && npm install
     startCommand: cd backend && npm start
     envVars:
       - key: NODE_ENV
         value: production
       - key: MONGODB_URI
-        sync: false
+        value: mongodb+srv://emporium-user:taniish25@emporium.kzvu9dg.mongodb.net/emporium
       - key: JWT_SECRET
-        sync: false
+        value: emporium_super_secret_jwt_key_2024_production_ready
+      - key: PORT
+        value: 10000
 
-  # Frontend React App
+  # Frontend React App  
   - type: web
     name: emporium-frontend
     env: static
     plan: free
+    region: oregon
     buildCommand: cd frontend && npm install && npm run build
     staticPublishPath: ./frontend/build
     envVars:
       - key: REACT_APP_API_URL
-        value: https://emporium-backend.onrender.com
+        value: https://emporium-backend.onrender.com/api
