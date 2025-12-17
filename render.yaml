@@ -3,8 +3,6 @@ services:
   - type: web
     name: emporium-backend
     env: node
-    plan: free
-    region: oregon
     buildCommand: cd backend && npm install
     startCommand: cd backend && npm start
     envVars:
@@ -14,14 +12,11 @@ services:
         value: mongodb+srv://emporium-user:taniish25@emporium.kzvu9dg.mongodb.net/emporium
       - key: JWT_SECRET
         value: emporium_super_secret_jwt_key_2024_production_ready
-      - key: PORT
-        value: 10000
 
   # Frontend React App  
   - type: web
     name: emporium-frontend
     env: static
-    plan: free
     buildCommand: cd frontend && npm install && npm run build
     staticPublishPath: ./frontend/build
     envVars:
