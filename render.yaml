@@ -18,7 +18,7 @@ services:
     name: emporium-frontend
     env: static
     buildCommand: cd frontend && npm install && npm run build
-    staticPublishPath: ./frontend/build
+    staticPublishPath: frontend/build
     envVars:
       - key: REACT_APP_API_URL
         value: https://emporium-backend.onrender.com/api
