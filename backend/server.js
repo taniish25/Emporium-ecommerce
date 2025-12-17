@@ -61,7 +61,15 @@ app.get('/api/test', async (req, res) => {
 
 // Basic route
 app.get('/', (req, res) => {
-  res.json({ message: 'EMPORIUM eCommerce API - Backend Server' });
+  res.json({ 
+    message: 'EMPORIUM eCommerce API - Backend Server',
+    version: '1.0.0',
+    endpoints: {
+      health: '/api/health',
+      products: '/api/products',
+      auth: '/api/auth'
+    }
+  });
 });
 
 const PORT = process.env.PORT || 5000;
