@@ -1,19 +1,24 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const path = require('path');
 require('dotenv').config();
 
 const authRoutes = require('./routes/auth');
 const productRoutes = require('./routes/products');
 const cartRoutes = require('./routes/cart');
-
 const orderRoutes = require('./routes/orders');
 const profileRoutes = require('./routes/profile');
 
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: process.env.NODE_ENV === 'production' 
+    ? ['https://emporium-frontend.onrender.com'] 
+    : ['http://localhost:3000'],
+  credentials: true
+}));
 app.use(express.json());
 
 // Database connection
@@ -29,9 +34,18 @@ app.use('/api/cart', cartRoutes);
 app.use('/api/orders', orderRoutes);
 app.use('/api/profile', profileRoutes);
 
+// Health check route
+app.get('/api/health', (req, res) => {
+  res.json({ 
+    message: 'EMPORIUM eCommerce API', 
+    status: 'healthy',
+    timestamp: new Date().toISOString()
+  });
+});
+
 // Basic route
 app.get('/', (req, res) => {
-  res.json({ message: 'EMPORIUM eCommerce API' });
+  res.json({ message: 'EMPORIUM eCommerce API - Backend Server' });
 });
 
 const PORT = process.env.PORT || 5000;
