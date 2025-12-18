@@ -116,12 +116,12 @@ const Cart = () => {
         <title>MERNShop - Shopping Cart</title>
       </Helmet>
 
-      <div className="min-h-screen bg-gray-50 py-8">
+      <div className="min-h-screen bg-gray-50 dark:bg-gray-900 py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between mb-8">
             <div>
-              <h1 className="text-3xl font-bold text-gray-900">Shopping Cart</h1>
-              <p className="text-gray-600 mt-2">
+              <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-100">Shopping Cart</h1>
+              <p className="text-gray-600 dark:text-gray-400 mt-2">
                 {cart.length} {cart.length === 1 ? 'item' : 'items'} in your cart
               </p>
             </div>
@@ -135,12 +135,12 @@ const Cart = () => {
           </div>
 
           {cart.length === 0 ? (
-            <div className="bg-white rounded-lg shadow-sm p-8 text-center">
+            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-8 text-center">
               <ShoppingBagIcon className="h-16 w-16 text-gray-400 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2">
                 Your cart is empty
               </h3>
-              <p className="text-gray-600 mb-6">
+              <p className="text-gray-600 dark:text-gray-400 mb-6">
                 Looks like you haven't added any items to your cart yet.
               </p>
               <Link
@@ -154,11 +154,11 @@ const Cart = () => {
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
               {/* Cart Items */}
               <div className="lg:col-span-2">
-                <div className="bg-white rounded-lg shadow-sm overflow-hidden">
-                  <div className="px-6 py-4 border-b border-gray-200">
-                    <h2 className="text-lg font-semibold text-gray-900">Cart Items</h2>
+                <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm overflow-hidden">
+                  <div className="px-6 py-4 border-b border-gray-200 dark:border-gray-700">
+                    <h2 className="text-lg font-semibold text-gray-900 dark:text-gray-100">Cart Items</h2>
                   </div>
-                  <div className="divide-y divide-gray-200">
+                  <div className="divide-y divide-gray-200 dark:divide-gray-700">
                     {cart.map((item) => (
                       <div key={item.product._id} className="p-6">
                         <div className="flex flex-col sm:flex-row sm:items-center">
@@ -172,10 +172,10 @@ const Cart = () => {
                           <div className="flex-1">
                             <div className="flex justify-between">
                               <div>
-                                <h3 className="text-lg font-medium text-gray-900">
+                                <h3 className="text-lg font-medium text-gray-900 dark:text-gray-100">
                                   {item.product.name}
                                 </h3>
-                                <p className="text-gray-600 text-sm mt-1">
+                                <p className="text-gray-600 dark:text-gray-400 text-sm mt-1">
                                   ${item.product.price.toFixed(2)} each
                                 </p>
                               </div>
@@ -190,25 +190,25 @@ const Cart = () => {
                               <div className="flex items-center">
                                 <button
                                   onClick={() => handleQuantityChange(item.product._id, -1)}
-                                  className="w-8 h-8 flex items-center justify-center border border-gray-300 rounded-l-md hover:bg-gray-50"
+                                  className="w-8 h-8 flex items-center justify-center border border-gray-300 dark:border-gray-600 rounded-l-md hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-900 dark:text-gray-100"
                                 >
                                   <span className="text-lg">−</span>
                                 </button>
-                                <span className="w-12 h-8 flex items-center justify-center border-y border-gray-300">
+                                <span className="w-12 h-8 flex items-center justify-center border-y border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-100">
                                   {item.quantity}
                                 </span>
                                 <button
                                   onClick={() => handleQuantityChange(item.product._id, 1)}
-                                  className="w-8 h-8 flex items-center justify-center border border-gray-300 rounded-r-md hover:bg-gray-50"
+                                  className="w-8 h-8 flex items-center justify-center border border-gray-300 dark:border-gray-600 rounded-r-md hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-900 dark:text-gray-100"
                                 >
                                   <span className="text-lg">+</span>
                                 </button>
                               </div>
                               <div className="text-right">
-                                <p className="text-lg font-bold text-gray-900">
+                                <p className="text-lg font-bold text-gray-900 dark:text-gray-100">
                                   ${(item.product.price * item.quantity).toFixed(2)}
                                 </p>
-                                <p className="text-sm text-gray-500">
+                                <p className="text-sm text-gray-500 dark:text-gray-400">
                                   ${item.product.price.toFixed(2)} × {item.quantity}
                                 </p>
                               </div>
@@ -223,35 +223,35 @@ const Cart = () => {
 
               {/* Order Summary */}
               <div className="lg:col-span-1">
-                <div className="bg-white rounded-lg shadow-sm p-6">
-                  <h2 className="text-lg font-semibold text-gray-900 mb-6">
+                <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6">
+                  <h2 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-6">
                     Order Summary
                   </h2>
                   
                   <div className="space-y-4">
                     <div className="flex justify-between text-sm">
-                      <span className="text-gray-600">Subtotal</span>
-                      <span className="font-medium">${subtotal.toFixed(2)}</span>
+                      <span className="text-gray-600 dark:text-gray-400">Subtotal</span>
+                      <span className="font-medium text-gray-900 dark:text-gray-100">${subtotal.toFixed(2)}</span>
                     </div>
                     
                     <div className="flex justify-between text-sm">
-                      <span className="text-gray-600">Shipping</span>
-                      <span className="font-medium">
+                      <span className="text-gray-600 dark:text-gray-400">Shipping</span>
+                      <span className="font-medium text-gray-900 dark:text-gray-100">
                         {shipping === 0 ? 'FREE' : `$${shipping.toFixed(2)}`}
                       </span>
                     </div>
                     
                     <div className="flex justify-between text-sm">
-                      <span className="text-gray-600">Tax (8%)</span>
-                      <span className="font-medium">${tax.toFixed(2)}</span>
+                      <span className="text-gray-600 dark:text-gray-400">Tax (8%)</span>
+                      <span className="font-medium text-gray-900 dark:text-gray-100">${tax.toFixed(2)}</span>
                     </div>
                     
-                    <div className="border-t border-gray-200 pt-4">
-                      <div className="flex justify-between text-lg font-bold">
+                    <div className="border-t border-gray-200 dark:border-gray-700 pt-4">
+                      <div className="flex justify-between text-lg font-bold text-gray-900 dark:text-gray-100">
                         <span>Total</span>
                         <span>${total.toFixed(2)}</span>
                       </div>
-                      <p className="text-sm text-gray-500 mt-1">
+                      <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
                         {shipping === 0 ? 
                           '🎉 Free shipping on orders over $50!' : 
                           `Add $${(50 - subtotal).toFixed(2)} more for free shipping`
@@ -282,24 +282,24 @@ const Cart = () => {
                   )}
                   
                   <div className="mt-6">
-                    <p className="text-sm text-gray-600">
+                    <p className="text-sm text-gray-600 dark:text-gray-400">
                       <span className="font-medium">Secure checkout</span> • Your payment information is encrypted
                     </p>
                   </div>
                 </div>
 
                 {/* Promo Code */}
-                <div className="mt-6 bg-white rounded-lg shadow-sm p-6">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-4">
+                <div className="mt-6 bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6">
+                  <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4">
                     Have a promo code?
                   </h3>
                   <div className="flex">
                     <input
                       type="text"
                       placeholder="Enter code"
-                      className="flex-1 border border-gray-300 rounded-l-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      className="flex-1 border border-gray-300 dark:border-gray-600 rounded-l-md px-4 py-2 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     />
-                    <button className="bg-gray-100 hover:bg-gray-200 text-gray-800 font-medium px-4 py-2 rounded-r-md transition duration-200">
+                    <button className="bg-gray-100 dark:bg-gray-600 hover:bg-gray-200 dark:hover:bg-gray-500 text-gray-800 dark:text-gray-200 font-medium px-4 py-2 rounded-r-md transition duration-200">
                       Apply
                     </button>
                   </div>
@@ -309,7 +309,7 @@ const Cart = () => {
                 <div className="mt-6">
                   <Link
                     to="/products"
-                    className="block w-full text-center border border-gray-300 text-gray-700 font-medium py-3 px-4 rounded-md hover:bg-gray-50 transition duration-200"
+                    className="block w-full text-center border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 font-medium py-3 px-4 rounded-md hover:bg-gray-50 dark:hover:bg-gray-700 transition duration-200"
                   >
                     Continue Shopping
                   </Link>
