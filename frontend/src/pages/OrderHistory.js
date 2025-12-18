@@ -76,22 +76,22 @@ const OrderHistory = () => {
         <title>Order History - MERNShop</title>
       </Helmet>
 
-      <div className="min-h-screen bg-gray-50 py-8">
+      <div className="min-h-screen bg-gray-50 dark:bg-gray-900 py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-8">
-            <h1 className="text-3xl font-bold text-gray-900">Order History</h1>
-            <p className="text-gray-600 mt-2">
+            <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-100">Order History</h1>
+            <p className="text-gray-600 dark:text-gray-400 mt-2">
               View and track all your past orders
             </p>
           </div>
 
           {orders.length === 0 ? (
-            <div className="bg-white rounded-lg shadow-sm p-8 text-center">
+            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-8 text-center">
               <ShoppingBagIcon className="h-16 w-16 text-gray-400 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2">
                 No orders yet
               </h3>
-              <p className="text-gray-600 mb-6">
+              <p className="text-gray-600 dark:text-gray-400 mb-6">
                 You haven't placed any orders. Start shopping to see your order history here.
               </p>
               <Link
@@ -105,54 +105,54 @@ const OrderHistory = () => {
             <>
               {/* Order Summary */}
               <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
-                <div className="bg-white rounded-lg shadow-sm p-4">
+                <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-4">
                   <div className="flex items-center">
                     <div className="bg-blue-100 p-2 rounded-lg">
                       <ShoppingBagIcon className="h-6 w-6 text-blue-600" />
                     </div>
                     <div className="ml-4">
-                      <p className="text-sm text-gray-600">Total Orders</p>
-                      <p className="text-2xl font-bold">{orders.length}</p>
+                      <p className="text-sm text-gray-600 dark:text-gray-400">Total Orders</p>
+                      <p className="text-2xl font-bold text-gray-900 dark:text-gray-100">{orders.length}</p>
                     </div>
                   </div>
                 </div>
 
-                <div className="bg-white rounded-lg shadow-sm p-4">
+                <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-4">
                   <div className="flex items-center">
                     <div className="bg-green-100 p-2 rounded-lg">
                       <CheckCircleIcon className="h-6 w-6 text-green-600" />
                     </div>
                     <div className="ml-4">
-                      <p className="text-sm text-gray-600">Delivered</p>
-                      <p className="text-2xl font-bold">
+                      <p className="text-sm text-gray-600 dark:text-gray-400">Delivered</p>
+                      <p className="text-2xl font-bold text-gray-900 dark:text-gray-100">
                         {orders.filter(o => o.orderStatus === 'Delivered').length}
                       </p>
                     </div>
                   </div>
                 </div>
 
-                <div className="bg-white rounded-lg shadow-sm p-4">
+                <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-4">
                   <div className="flex items-center">
                     <div className="bg-yellow-100 p-2 rounded-lg">
                       <ClockIcon className="h-6 w-6 text-yellow-600" />
                     </div>
                     <div className="ml-4">
-                      <p className="text-sm text-gray-600">Processing</p>
-                      <p className="text-2xl font-bold">
+                      <p className="text-sm text-gray-600 dark:text-gray-400">Processing</p>
+                      <p className="text-2xl font-bold text-gray-900 dark:text-gray-100">
                         {orders.filter(o => o.orderStatus === 'Processing').length}
                       </p>
                     </div>
                   </div>
                 </div>
 
-                <div className="bg-white rounded-lg shadow-sm p-4">
+                <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-4">
                   <div className="flex items-center">
                     <div className="bg-purple-100 p-2 rounded-lg">
                       <TruckIcon className="h-6 w-6 text-purple-600" />
                     </div>
                     <div className="ml-4">
-                      <p className="text-sm text-gray-600">Total Spent</p>
-                      <p className="text-2xl font-bold">
+                      <p className="text-sm text-gray-600 dark:text-gray-400">Total Spent</p>
+                      <p className="text-2xl font-bold text-gray-900 dark:text-gray-100">
                         ${orders.reduce((sum, order) => sum + order.total, 0).toFixed(2)}
                       </p>
                     </div>
@@ -161,23 +161,23 @@ const OrderHistory = () => {
               </div>
 
               {/* Orders List */}
-              <div className="bg-white shadow-sm rounded-lg overflow-hidden">
-                <div className="px-6 py-4 border-b border-gray-200">
-                  <h2 className="text-lg font-semibold text-gray-900">Recent Orders</h2>
+              <div className="bg-white dark:bg-gray-800 shadow-sm rounded-lg overflow-hidden">
+                <div className="px-6 py-4 border-b border-gray-200 dark:border-gray-700">
+                  <h2 className="text-lg font-semibold text-gray-900 dark:text-gray-100">Recent Orders</h2>
                 </div>
 
-                <div className="divide-y divide-gray-200">
+                <div className="divide-y divide-gray-200 dark:divide-gray-700">
                   {orders.map((order) => (
                     <div key={order._id} className="p-6">
                       <div className="flex flex-col md:flex-row md:items-center justify-between mb-4">
                         <div>
                           <div className="flex items-center">
                             <CalendarIcon className="h-5 w-5 text-gray-400 mr-2" />
-                            <span className="text-sm text-gray-600">
+                            <span className="text-sm text-gray-600 dark:text-gray-400">
                               {formatDate(order.orderDate)}
                             </span>
                           </div>
-                          <h3 className="text-lg font-medium text-gray-900 mt-1">
+                          <h3 className="text-lg font-medium text-gray-900 dark:text-gray-100 mt-1">
                             Order #{order._id.slice(-8).toUpperCase()}
                           </h3>
                         </div>
@@ -202,41 +202,41 @@ const OrderHistory = () => {
 
                       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
                         <div>
-                          <p className="text-sm text-gray-600">Items</p>
-                          <p className="font-medium">{order.items.length} items</p>
+                          <p className="text-sm text-gray-600 dark:text-gray-400">Items</p>
+                          <p className="font-medium text-gray-900 dark:text-gray-100">{order.items.length} items</p>
                         </div>
                         <div>
-                          <p className="text-sm text-gray-600">Payment</p>
-                          <p className="font-medium">{order.paymentMethod}</p>
+                          <p className="text-sm text-gray-600 dark:text-gray-400">Payment</p>
+                          <p className="font-medium text-gray-900 dark:text-gray-100">{order.paymentMethod}</p>
                         </div>
                         <div>
-                          <p className="text-sm text-gray-600">Total Amount</p>
-                          <p className="text-lg font-bold text-gray-900">${order.total.toFixed(2)}</p>
+                          <p className="text-sm text-gray-600 dark:text-gray-400">Total Amount</p>
+                          <p className="text-lg font-bold text-gray-900 dark:text-gray-100">${order.total.toFixed(2)}</p>
                         </div>
                       </div>
 
                       {/* Order Items (Collapsible) */}
                       {selectedOrder?._id === order._id && (
-                        <div className="mt-6 pt-6 border-t border-gray-200 animate-slide-up">
-                          <h4 className="text-md font-medium text-gray-900 mb-4">Order Items</h4>
+                        <div className="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700 animate-slide-up">
+                          <h4 className="text-md font-medium text-gray-900 dark:text-gray-100 mb-4">Order Items</h4>
                           <div className="space-y-4">
                             {order.items.map((item, index) => (
-                              <div key={index} className="flex items-center p-4 bg-gray-50 rounded-lg">
+                              <div key={index} className="flex items-center p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
                                 <img
                                   src={item.image || item.product?.image}
                                   alt={item.name || item.product?.name}
                                   className="w-16 h-16 object-cover rounded"
                                 />
                                 <div className="ml-4 flex-1">
-                                  <h5 className="font-medium text-gray-900">
+                                  <h5 className="font-medium text-gray-900 dark:text-gray-100">
                                     {item.name || item.product?.name}
                                   </h5>
-                                  <p className="text-sm text-gray-600">
+                                  <p className="text-sm text-gray-600 dark:text-gray-400">
                                     Quantity: {item.quantity} × ${item.price?.toFixed(2) || item.product?.price.toFixed(2)}
                                   </p>
                                 </div>
                                 <div className="text-right">
-                                  <p className="font-bold text-gray-900">
+                                  <p className="font-bold text-gray-900 dark:text-gray-100">
                                     ${((item.price || item.product?.price) * item.quantity).toFixed(2)}
                                   </p>
                                 </div>
@@ -245,37 +245,37 @@ const OrderHistory = () => {
                           </div>
 
                           {/* Order Summary */}
-                          <div className="mt-6 bg-gray-50 p-4 rounded-lg">
+                          <div className="mt-6 bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
                             <div className="flex justify-between text-sm mb-2">
-                              <span className="text-gray-600">Subtotal</span>
-                              <span>${order.subtotal.toFixed(2)}</span>
+                              <span className="text-gray-600 dark:text-gray-400">Subtotal</span>
+                              <span className="text-gray-900 dark:text-gray-100">${order.subtotal.toFixed(2)}</span>
                             </div>
                             <div className="flex justify-between text-sm mb-2">
-                              <span className="text-gray-600">Shipping</span>
-                              <span>${order.shipping.toFixed(2)}</span>
+                              <span className="text-gray-600 dark:text-gray-400">Shipping</span>
+                              <span className="text-gray-900 dark:text-gray-100">${order.shipping.toFixed(2)}</span>
                             </div>
                             <div className="flex justify-between text-sm mb-2">
-                              <span className="text-gray-600">Tax</span>
-                              <span>${order.tax.toFixed(2)}</span>
+                              <span className="text-gray-600 dark:text-gray-400">Tax</span>
+                              <span className="text-gray-900 dark:text-gray-100">${order.tax.toFixed(2)}</span>
                             </div>
-                            <div className="flex justify-between text-lg font-bold pt-2 border-t border-gray-300">
-                              <span>Total</span>
-                              <span>${order.total.toFixed(2)}</span>
+                            <div className="flex justify-between text-lg font-bold pt-2 border-t border-gray-300 dark:border-gray-600">
+                              <span className="text-gray-900 dark:text-gray-100">Total</span>
+                              <span className="text-gray-900 dark:text-gray-100">${order.total.toFixed(2)}</span>
                             </div>
                           </div>
 
                           {/* Shipping Info */}
                           {order.shippingAddress && (
                             <div className="mt-6">
-                              <h5 className="text-md font-medium text-gray-900 mb-2">Shipping Address</h5>
-                              <div className="bg-gray-50 p-4 rounded-lg">
-                                <p className="text-gray-900">
+                              <h5 className="text-md font-medium text-gray-900 dark:text-gray-100 mb-2">Shipping Address</h5>
+                              <div className="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
+                                <p className="text-gray-900 dark:text-gray-100">
                                   {order.shippingAddress.street}
                                 </p>
-                                <p className="text-gray-900">
+                                <p className="text-gray-900 dark:text-gray-100">
                                   {order.shippingAddress.city}, {order.shippingAddress.state} {order.shippingAddress.zipCode}
                                 </p>
-                                <p className="text-gray-900">
+                                <p className="text-gray-900 dark:text-gray-100">
                                   {order.shippingAddress.country}
                                 </p>
                               </div>

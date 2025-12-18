@@ -104,12 +104,12 @@ const Profile = () => {
         <title>My Profile - MERNShop</title>
       </Helmet>
 
-      <div className="min-h-screen bg-gray-50 py-8">
+      <div className="min-h-screen bg-gray-50 dark:bg-gray-900 py-8">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center mb-8">
             <div>
-              <h1 className="text-3xl font-bold text-gray-900">My Profile</h1>
-              <p className="text-gray-600 mt-2">Manage your account information</p>
+              <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-100">My Profile</h1>
+              <p className="text-gray-600 dark:text-gray-400 mt-2">Manage your account information</p>
             </div>
             {!editing && (
               <button
@@ -122,15 +122,15 @@ const Profile = () => {
             )}
           </div>
 
-          <div className="bg-white shadow-sm rounded-lg overflow-hidden">
-            <div className="p-6 border-b border-gray-200">
+          <div className="bg-white dark:bg-gray-800 shadow-sm rounded-lg overflow-hidden">
+            <div className="p-6 border-b border-gray-200 dark:border-gray-700">
               <div className="flex items-center">
                 <UserCircleIcon className="h-16 w-16 text-gray-400" />
                 <div className="ml-4">
-                  <h2 className="text-xl font-semibold text-gray-900">
+                  <h2 className="text-xl font-semibold text-gray-900 dark:text-gray-100">
                     {profile?.name}
                   </h2>
-                  <div className="flex items-center text-gray-600 mt-1">
+                  <div className="flex items-center text-gray-600 dark:text-gray-400 mt-1">
                     <EnvelopeIcon className="h-4 w-4 mr-2" />
                     {profile?.email}
                   </div>
@@ -143,12 +143,12 @@ const Profile = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {/* Personal Information */}
                   <div className="space-y-4">
-                    <h3 className="text-lg font-medium text-gray-900">
+                    <h3 className="text-lg font-medium text-gray-900 dark:text-gray-100">
                       Personal Information
                     </h3>
                     
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                      <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                         Full Name
                       </label>
                       {editing ? (
@@ -161,22 +161,22 @@ const Profile = () => {
                           required
                         />
                       ) : (
-                        <p className="text-gray-900">{profile?.name}</p>
+                        <p className="text-gray-900 dark:text-gray-100">{profile?.name}</p>
                       )}
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                      <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                         Email Address
                       </label>
-                      <div className="flex items-center text-gray-900">
+                      <div className="flex items-center text-gray-900 dark:text-gray-100">
                         <EnvelopeIcon className="h-4 w-4 mr-2 text-gray-400" />
                         {profile?.email}
                       </div>
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                      <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                         Phone Number
                       </label>
                       {editing ? (
@@ -192,7 +192,7 @@ const Profile = () => {
                           />
                         </div>
                       ) : (
-                        <div className="flex items-center text-gray-900">
+                        <div className="flex items-center text-gray-900 dark:text-gray-100">
                           <PhoneIcon className="h-4 w-4 mr-2 text-gray-400" />
                           {profile?.address?.phone || 'Not provided'}
                         </div>
@@ -203,14 +203,14 @@ const Profile = () => {
                   {/* Shipping Address */}
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
-                      <h3 className="text-lg font-medium text-gray-900">
+                      <h3 className="text-lg font-medium text-gray-900 dark:text-gray-100">
                         Shipping Address
                       </h3>
                       <HomeIcon className="h-5 w-5 text-gray-400" />
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                      <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                         Street Address
                       </label>
                       {editing ? (
@@ -223,13 +223,13 @@ const Profile = () => {
                           placeholder="123 Main St"
                         />
                       ) : (
-                        <p className="text-gray-900">{profile?.address?.street || 'Not provided'}</p>
+                        <p className="text-gray-900 dark:text-gray-100">{profile?.address?.street || 'Not provided'}</p>
                       )}
                     </div>
 
                     <div className="grid grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-1">
+                        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                           City
                         </label>
                         {editing ? (
@@ -242,12 +242,12 @@ const Profile = () => {
                             placeholder="New York"
                           />
                         ) : (
-                          <p className="text-gray-900">{profile?.address?.city || '—'}</p>
+                          <p className="text-gray-900 dark:text-gray-100">{profile?.address?.city || '—'}</p>
                         )}
                       </div>
 
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-1">
+                        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                           State
                         </label>
                         {editing ? (
@@ -260,14 +260,14 @@ const Profile = () => {
                             placeholder="NY"
                           />
                         ) : (
-                          <p className="text-gray-900">{profile?.address?.state || '—'}</p>
+                          <p className="text-gray-900 dark:text-gray-100">{profile?.address?.state || '—'}</p>
                         )}
                       </div>
                     </div>
 
                     <div className="grid grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-1">
+                        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                           Country
                         </label>
                         {editing ? (
@@ -280,12 +280,12 @@ const Profile = () => {
                             placeholder="United States"
                           />
                         ) : (
-                          <p className="text-gray-900">{profile?.address?.country || '—'}</p>
+                          <p className="text-gray-900 dark:text-gray-100">{profile?.address?.country || '—'}</p>
                         )}
                       </div>
 
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-1">
+                        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                           ZIP Code
                         </label>
                         {editing ? (
@@ -298,7 +298,7 @@ const Profile = () => {
                             placeholder="10001"
                           />
                         ) : (
-                          <p className="text-gray-900">{profile?.address?.zipCode || '—'}</p>
+                          <p className="text-gray-900 dark:text-gray-100">{profile?.address?.zipCode || '—'}</p>
                         )}
                       </div>
                     </div>
@@ -307,7 +307,7 @@ const Profile = () => {
 
                 {/* Edit Buttons */}
                 {editing && (
-                  <div className="mt-8 pt-6 border-t border-gray-200 flex justify-end space-x-4">
+                  <div className="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700 flex justify-end space-x-4">
                     <button
                       type="button"
                       onClick={() => {
