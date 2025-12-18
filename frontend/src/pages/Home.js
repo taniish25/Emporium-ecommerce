@@ -48,10 +48,10 @@ const Home = () => {
             <div className="container mx-auto px-4 text-center">
               <div className="inline-flex items-center justify-center mb-6 px-4 py-2 bg-primary/20 backdrop-blur-sm rounded-full border border-primary/30">
                 <SparklesIcon className="h-4 w-4 text-primary mr-2" />
-                <span className="text-sm text-primary font-medium">Premium Shopping Experience</span>
+                <span className="text-sm text-white font-medium">Premium Shopping Experience</span>
               </div>
               <h1 className="hero-title">
-                Welcome to <span className="text-gradient">Emporium</span>
+                WELCOME TO EMPORIUM
               </h1>
               <p className="hero-subtitle">
                 Discover premium products with exclusive deals and unparalleled shopping experience

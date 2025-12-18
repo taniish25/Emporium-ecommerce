@@ -49,12 +49,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 group">
-            <div className="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-              <span className="text-white font-bold text-lg">E</span>
-            </div>
-            <span className="text-xl md:text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              EMPORIUM
-            </span>
+            <img src="/logo3.png" alt="Emporium Logo" className="h-10 w-auto" />
           </Link>
 
           {/* Desktop Navigation */}
@@ -71,18 +66,6 @@ const Navbar = () => {
                 Admin Panel
               </Link>
             )}
-
-            <button
-              onClick={toggleDarkMode}
-              className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
-              title={darkMode ? "Switch to light mode" : "Switch to dark mode"}
-            >
-              {darkMode ? (
-                <SunIcon className="h-5 w-5 text-yellow-500" />
-              ) : (
-                <MoonIcon className="h-5 w-5 text-gray-600 dark:text-gray-400" />
-              )}
-            </button>
 
             {user && (
               <>
