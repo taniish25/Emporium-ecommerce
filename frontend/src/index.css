@@ -8,6 +8,20 @@
     overflow-x: hidden;
   }
 
+  /* Ensure all text has proper contrast */
+  * {
+    @apply text-gray-900 dark:text-gray-100;
+  }
+
+  /* Override for specific elements that need different colors */
+  .text-gray-500 {
+    @apply text-gray-600 dark:text-gray-400;
+  }
+
+  .text-gray-600 {
+    @apply text-gray-700 dark:text-gray-300;
+  }
+
   ::-webkit-scrollbar {
     width: 10px;
     height: 10px;
@@ -42,7 +56,25 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-bold tracking-tight text-gray-900 dark:text-gray-100;
+    @apply font-bold tracking-tight text-gray-900 dark:text-gray-100 !important;
+  }
+
+  /* Ensure labels and form text are visible */
+  label {
+    @apply text-gray-700 dark:text-gray-300 !important;
+  }
+
+  /* Table text visibility */
+  table {
+    @apply text-gray-900 dark:text-gray-100;
+  }
+
+  th {
+    @apply text-gray-600 dark:text-gray-300 !important;
+  }
+
+  td {
+    @apply text-gray-900 dark:text-gray-100;
   }
 
   html {
@@ -68,7 +100,7 @@
   }
 
   .card {
-    @apply bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg;
+    @apply bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg text-gray-900 dark:text-gray-100;
   }
 
   .card-hover {
@@ -76,7 +108,7 @@
   }
 
   .input-field {
-    @apply w-full px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition duration-200;
+    @apply w-full px-4 py-2 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition duration-200;
   }
 
   .input-error {

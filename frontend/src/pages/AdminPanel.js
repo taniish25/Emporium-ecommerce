@@ -116,7 +116,7 @@ const AdminPanel = () => {
     <div className="min-h-screen py-8">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center mb-8">
-          <h1 className="text-3xl font-bold">Admin Panel</h1>
+          <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-100">Admin Panel</h1>
           <button
             onClick={() => setShowForm(true)}
             className="btn-primary flex items-center"
@@ -130,13 +130,13 @@ const AdminPanel = () => {
         {showForm && (
           <div className="card mb-8">
             <div className="p-6">
-              <h2 className="text-xl font-bold mb-4">
+              <h2 className="text-xl font-bold mb-4 text-gray-900 dark:text-gray-100">
                 {editingProduct ? 'Edit Product' : 'Add New Product'}
               </h2>
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                       Product Name
                     </label>
                     <input
@@ -149,7 +149,7 @@ const AdminPanel = () => {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                       Price
                     </label>
                     <input
@@ -164,7 +164,7 @@ const AdminPanel = () => {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                       Category
                     </label>
                     <input
@@ -177,7 +177,7 @@ const AdminPanel = () => {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                       Stock
                     </label>
                     <input
@@ -191,7 +191,7 @@ const AdminPanel = () => {
                     />
                   </div>
                   <div className="md:col-span-2">
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                       Image URL
                     </label>
                     <input
@@ -204,7 +204,7 @@ const AdminPanel = () => {
                     />
                   </div>
                   <div className="md:col-span-2">
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                       Description
                     </label>
                     <textarea
@@ -236,29 +236,29 @@ const AdminPanel = () => {
 
         {/* Products List */}
         <div className="overflow-x-auto">
-          <table className="min-w-full bg-white rounded-lg overflow-hidden">
-            <thead className="bg-gray-50">
+          <table className="min-w-full bg-white dark:bg-gray-800 rounded-lg overflow-hidden">
+            <thead className="bg-gray-50 dark:bg-gray-700">
               <tr>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
                   Product
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
                   Category
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
                   Price
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
                   Stock
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
                   Actions
                 </th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-gray-200">
+            <tbody className="divide-y divide-gray-200 dark:divide-gray-600">
               {products.map((product) => (
-                <tr key={product._id} className="hover:bg-gray-50">
+                <tr key={product._id} className="hover:bg-gray-50 dark:hover:bg-gray-700">
                   <td className="px-6 py-4">
                     <div className="flex items-center">
                       <img
@@ -267,10 +267,10 @@ const AdminPanel = () => {
                         className="h-10 w-10 rounded object-cover mr-3"
                       />
                       <div>
-                        <div className="font-medium text-gray-900">
+                        <div className="font-medium text-gray-900 dark:text-gray-100">
                           {product.name}
                         </div>
-                        <div className="text-sm text-gray-500 truncate max-w-xs">
+                        <div className="text-sm text-gray-500 dark:text-gray-400 truncate max-w-xs">
                           {product.description}
                         </div>
                       </div>
@@ -281,7 +281,7 @@ const AdminPanel = () => {
                       {product.category}
                     </span>
                   </td>
-                  <td className="px-6 py-4 font-medium">
+                  <td className="px-6 py-4 font-medium text-gray-900 dark:text-gray-100">
                     ${product.price}
                   </td>
                   <td className="px-6 py-4">
