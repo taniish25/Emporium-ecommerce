@@ -10,7 +10,7 @@ export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
 
   const API = axios.create({
-    baseURL: process.env.REACT_APP_API_URL || 'https://emporium-ecommerce-backend.onrender.com',
+    baseURL: process.env.REACT_APP_API_URL || 'https://emporium-ecommerce-backend.onrender.com/api',
   });
 
   API.interceptors.request.use((config) => {
