@@ -20,7 +20,7 @@ const Home = () => {
 
   const fetchFeaturedProducts = async () => {
     try {
-      const { data } = await API.get('/products');
+      const { data } = await API.get('/api/products');
       setFeaturedProducts(data.slice(0, 6));
     } catch (error) {
       console.error('Failed to fetch products:', error);
