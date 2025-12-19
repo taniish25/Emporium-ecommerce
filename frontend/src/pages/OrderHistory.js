@@ -25,7 +25,7 @@ const OrderHistory = () => {
 
   const fetchOrders = async () => {
     try {
-      const { data } = await API.get('/orders/my-orders');
+      const { data } = await API.get('/api/orders/my-orders');
       setOrders(data);
       setLoading(false);
     } catch (error) {
@@ -73,7 +73,7 @@ const OrderHistory = () => {
   return (
     <>
       <Helmet>
-        <title>Order History - MERNShop</title>
+        <title>Order History - EMPORIUM</title>
       </Helmet>
 
       <div className="min-h-screen bg-gray-50 dark:bg-gray-900 py-8">
@@ -95,7 +95,7 @@ const OrderHistory = () => {
                 You haven't placed any orders. Start shopping to see your order history here.
               </p>
               <Link
-                to="/products"
+                to="/api/products"
                 className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700"
               >
                 Start Shopping
