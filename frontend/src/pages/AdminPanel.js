@@ -29,7 +29,7 @@ const AdminPanel = () => {
 
   const fetchProducts = async () => {
     try {
-      const { data } = await API.get('/products');
+      const { data } = await API.get('/api/products');
       setProducts(data);
       setLoading(false);
     } catch (error) {
@@ -50,10 +50,10 @@ const AdminPanel = () => {
     
     try {
       if (editingProduct) {
-        await API.put(`/products/${editingProduct._id}`, formData);
+        await API.put(`/api/products/${editingProduct._id}`, formData);
         alert('Product updated successfully');
       } else {
-        await API.post('/products', formData);
+        await API.post('/api/products', formData);
         alert('Product created successfully');
       }
       
@@ -83,7 +83,7 @@ const AdminPanel = () => {
     }
 
     try {
-      await API.delete(`/products/${productId}`);
+      await API.delete(`/api/products/${productId}`);
       alert('Product deleted successfully');
       fetchProducts();
     } catch (error) {
