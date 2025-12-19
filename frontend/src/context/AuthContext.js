@@ -1,5 +1,6 @@
 import React, { createContext, useState, useContext, useEffect } from 'react';
 import axios from 'axios';
+import { API_BASE_URL } from '../config/api';
 
 const AuthContext = createContext();
 
@@ -10,7 +11,7 @@ export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
 
   const API = axios.create({
-    baseURL: process.env.REACT_APP_API_URL || 'https://emporium-ecommerce-backend.onrender.com/api',
+    baseURL: API_BASE_URL,
   });
 
   API.interceptors.request.use((config) => {
