@@ -126,7 +126,6 @@ const AdminPanel = () => {
           </button>
         </div>
 
-        {/* Product Form */}
         {showForm && (
           <div className="card mb-8">
             <div className="p-6">
@@ -234,7 +233,7 @@ const AdminPanel = () => {
           </div>
         )}
 
-        {/* Products List */}
+
         <div className="overflow-x-auto">
           <table className="min-w-full bg-white dark:bg-gray-800 rounded-lg overflow-hidden">
             <thead className="bg-gray-50 dark:bg-gray-700">

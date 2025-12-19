@@ -15,7 +15,7 @@ import AdminPanel from './pages/AdminPanel';
 import Profile from './pages/Profile';
 import OrderHistory from './pages/OrderHistory';
 
-// Import styles
+
 import './index.css';
 
 function App() {
@@ -24,7 +24,7 @@ function App() {
       <AuthProvider>
         <CartProvider>
           <Router>
-            {/* Dark theme wrapper */}
+
             <div className="dark bg-dark-bg min-h-screen">
               <Navbar />
               <Toaster 

@@ -35,9 +35,7 @@ const Home = () => {
       </Helmet>
 
       <div className="min-h-screen">
-        {/* Hero Section */}
         <section className="hero-section relative overflow-hidden">
-          {/* Animated background elements */}
           <div className="absolute inset-0">
             <div className="absolute top-0 left-0 w-64 h-64 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float"></div>
             <div className="absolute bottom-0 right-0 w-64 h-64 bg-yellow-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float" style={{animationDelay: '1s'}}></div>
@@ -75,7 +73,6 @@ const Home = () => {
           </div>
         </section>
 
-        {/* Featured Products */}
         <section className="py-16 bg-dark-card/30">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
@@ -136,7 +133,6 @@ const Home = () => {
           </div>
         </section>
 
-        {/* Features Section */}
         <section className="py-16 bg-gradient-to-b from-dark-card/50 to-dark-bg">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
@@ -177,7 +173,6 @@ const Home = () => {
           </div>
         </section>
 
-        {/* Categories Preview */}
         <section className="py-16">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">

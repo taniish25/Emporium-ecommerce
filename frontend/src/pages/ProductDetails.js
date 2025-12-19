@@ -71,7 +71,6 @@ const ProductDetails = () => {
     <div className="min-h-screen py-8">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* Product Image */}
           <div>
             <img
               src={product.image}
@@ -80,7 +79,7 @@ const ProductDetails = () => {
             />
           </div>
 
-          {/* Product Details */}
+
           <div>
             <h1 className="text-3xl font-bold mb-4">{product.name}</h1>
             <p className="text-gray-600 mb-6">{product.description}</p>
@@ -103,7 +102,7 @@ const ProductDetails = () => {
               </div>
             </div>
 
-            {/* Quantity Selector */}
+
             <div className="mb-8">
               <label className="block text-sm font-medium text-gray-700 mb-2">
                 Quantity
@@ -139,7 +138,7 @@ const ProductDetails = () => {
               </div>
             </div>
 
-            {/* Action Buttons */}
+
             <div className="flex space-x-4">
               <button
                 onClick={handleAddToCart}
@@ -156,7 +155,6 @@ const ProductDetails = () => {
               </button>
             </div>
 
-            {/* Additional Info */}
             <div className="mt-8 pt-8 border-t border-gray-200">
               <h3 className="text-lg font-semibold mb-4">Product Details</h3>
               <ul className="space-y-2 text-gray-600">

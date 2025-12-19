@@ -66,8 +66,6 @@ export const CartProvider = ({ children }) => {
 
   const clearCart = async () => {
     try {
-      // Remove all items from cart one by one
-      // Note: You might want to add a bulk delete endpoint in backend
       for (const item of cart) {
         await API.delete(`/cart/${item.product._id}`);
       }
@@ -75,7 +73,7 @@ export const CartProvider = ({ children }) => {
       toast.success('Cart cleared');
     } catch (error) {
       console.error('Failed to clear cart:', error);
-      // Still clear local state even if API fails
+
       setCart([]);
     }
   };

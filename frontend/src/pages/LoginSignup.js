@@ -76,9 +76,7 @@ const LoginSignup = () => {
             </p>
           </div>
 
-          {/* Form Card */}
           <div className="glass-morphism rounded-2xl p-8">
-            {/* Toggle Switch */}
             <div className="flex mb-8">
               <button
                 onClick={() => setIsLogin(true)}

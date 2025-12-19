@@ -103,7 +103,6 @@ const OrderHistory = () => {
             </div>
           ) : (
             <>
-              {/* Order Summary */}
               <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
                 <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-4">
                   <div className="flex items-center">
@@ -160,7 +159,6 @@ const OrderHistory = () => {
                 </div>
               </div>
 
-              {/* Orders List */}
               <div className="bg-white dark:bg-gray-800 shadow-sm rounded-lg overflow-hidden">
                 <div className="px-6 py-4 border-b border-gray-200 dark:border-gray-700">
                   <h2 className="text-lg font-semibold text-gray-900 dark:text-gray-100">Recent Orders</h2>
@@ -215,7 +213,6 @@ const OrderHistory = () => {
                         </div>
                       </div>
 
-                      {/* Order Items (Collapsible) */}
                       {selectedOrder?._id === order._id && (
                         <div className="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700 animate-slide-up">
                           <h4 className="text-md font-medium text-gray-900 dark:text-gray-100 mb-4">Order Items</h4>
@@ -244,7 +241,6 @@ const OrderHistory = () => {
                             ))}
                           </div>
 
-                          {/* Order Summary */}
                           <div className="mt-6 bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
                             <div className="flex justify-between text-sm mb-2">
                               <span className="text-gray-600 dark:text-gray-400">Subtotal</span>

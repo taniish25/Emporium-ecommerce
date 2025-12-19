@@ -3,7 +3,7 @@ const router = express.Router();
 const Order = require('../models/Order');
 const { auth } = require('../middleware/auth');
 
-// Create order
+
 router.post('/', auth, async (req, res) => {
   try {
     const order = new Order({
@@ -17,7 +17,7 @@ router.post('/', auth, async (req, res) => {
   }
 });
 
-// Get user's orders
+
 router.get('/my-orders', auth, async (req, res) => {
   try {
     const orders = await Order.find({ user: req.user._id })
@@ -29,7 +29,7 @@ router.get('/my-orders', auth, async (req, res) => {
   }
 });
 
-// Get single order
+
 router.get('/:id', auth, async (req, res) => {
   try {
     const order = await Order.findById(req.params.id)
@@ -40,7 +40,7 @@ router.get('/:id', auth, async (req, res) => {
       return res.status(404).json({ error: 'Order not found' });
     }
     
-    // Check if user owns the order or is admin
+    
     if (order.user._id.toString() !== req.user._id.toString() && !req.user.isAdmin) {
       return res.status(403).json({ error: 'Not authorized' });
     }
@@ -51,7 +51,7 @@ router.get('/:id', auth, async (req, res) => {
   }
 });
 
-// Update order status (admin only)
+
 router.patch('/:id/status', auth, async (req, res) => {
   try {
     if (!req.user.isAdmin) {

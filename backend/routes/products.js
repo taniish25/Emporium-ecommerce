@@ -3,7 +3,7 @@ const router = express.Router();
 const Product = require('../models/Product');
 const { auth, adminAuth } = require('../middleware/auth');
 
-// Get all products
+
 router.get('/', async (req, res) => {
   try {
     const products = await Product.find();
@@ -13,7 +13,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-// Get single product
+
 router.get('/:id', async (req, res) => {
   try {
     const product = await Product.findById(req.params.id);
@@ -26,7 +26,7 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-// Create product (Admin only)
+
 router.post('/', auth, adminAuth, async (req, res) => {
   try {
     const product = new Product(req.body);
@@ -37,7 +37,7 @@ router.post('/', auth, adminAuth, async (req, res) => {
   }
 });
 
-// Update product (Admin only)
+
 router.put('/:id', auth, adminAuth, async (req, res) => {
   try {
     const product = await Product.findByIdAndUpdate(
@@ -56,7 +56,7 @@ router.put('/:id', auth, adminAuth, async (req, res) => {
   }
 });
 
-// Delete product (Admin only)
+
 router.delete('/:id', auth, adminAuth, async (req, res) => {
   try {
     const product = await Product.findByIdAndDelete(req.params.id);

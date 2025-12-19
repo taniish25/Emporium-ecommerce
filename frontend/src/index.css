@@ -8,12 +8,11 @@
     overflow-x: hidden;
   }
 
-  /* Ensure all text has proper contrast */
   * {
     @apply text-gray-900 dark:text-gray-100;
   }
 
-  /* Override for specific elements that need different colors */
+
   .text-gray-500 {
     @apply text-gray-600 dark:text-gray-400;
   }
@@ -59,12 +58,11 @@
     @apply font-bold tracking-tight text-gray-900 dark:text-gray-100 !important;
   }
 
-  /* Ensure labels and form text are visible */
+
   label {
     @apply text-gray-700 dark:text-gray-300 !important;
   }
 
-  /* Table text visibility */
   table {
     @apply text-gray-900 dark:text-gray-100;
   }
@@ -231,12 +229,12 @@
     @apply text-xl md:text-2xl mb-8 max-w-2xl mx-auto text-blue-100;
   }
 
-  /* Loading Spinner */
+ 
   .spinner {
     @apply animate-spin rounded-full border-2 border-dark-border border-t-primary;
   }
 
-  /* Glass Effect */
+
   .glass {
     @apply backdrop-blur-md bg-white/5 border border-white/10;
   }
@@ -315,7 +313,7 @@
     box-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
   }
 
-  /* Custom shadows */
+
   .shadow-dark {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   }
@@ -324,7 +322,7 @@
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
   }
 
-  /* Text truncation */
+
   .line-clamp-1 {
     overflow: hidden;
     display: -webkit-box;
@@ -346,7 +344,7 @@
     -webkit-line-clamp: 3;
   }
 
-  /* Custom transitions */
+  
   .transition-all-smooth {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }

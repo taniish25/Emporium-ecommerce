@@ -91,10 +91,8 @@ const Products = () => {
             </p>
           </div>
 
-          {/* Filters Section */}
           <div className="glass-morphism rounded-2xl p-6 mb-8">
             <div className="flex flex-col lg:flex-row gap-6">
-              {/* Search */}
               <div className="flex-1">
                 <div className="relative">
                   <MagnifyingGlassIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-dark-text-secondary" />
@@ -108,7 +106,7 @@ const Products = () => {
                 </div>
               </div>
 
-              {/* Category Filter */}
+
               <div className="lg:w-64">
                 <div className="relative">
                   <FunnelIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-dark-text-secondary" />
@@ -127,7 +125,7 @@ const Products = () => {
                 </div>
               </div>
 
-              {/* Sort By */}
+
               <div className="lg:w-64">
                 <div className="relative">
                   <AdjustmentsHorizontalIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-dark-text-secondary" />
@@ -145,7 +143,7 @@ const Products = () => {
               </div>
             </div>
 
-            {/* Price Range Slider */}
+  
             <div className="mt-6">
               <div className="flex justify-between items-center mb-2">
                 <span className="text-dark-text-secondary">Price Range</span>
@@ -174,7 +172,7 @@ const Products = () => {
             </div>
           </div>
 
-          {/* Results Count */}
+
           <div className="flex justify-between items-center mb-6">
             <p className="text-dark-text-secondary">
               Showing <span className="text-white font-semibold">{filteredProducts.length}</span> products
@@ -200,7 +198,7 @@ const Products = () => {
             </div>
           ) : (
             <>
-              {/* Products Grid */}
+
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                 {filteredProducts.map((product) => (
                   <div key={product._id} className="group">
@@ -252,7 +250,7 @@ const Products = () => {
                 ))}
               </div>
 
-              {/* No Results */}
+
               {!loading && filteredProducts.length === 0 && (
                 <div className="text-center py-16 glass-morphism rounded-2xl">
                   <div className="w-24 h-24 mx-auto mb-6 bg-dark-border rounded-full flex items-center justify-center">

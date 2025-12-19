@@ -47,12 +47,12 @@ const Navbar = () => {
     <nav className="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 shadow-lg sticky top-0 z-40">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
-          {/* Logo */}
+
           <Link to="/" className="flex items-center space-x-2 group">
             <img src="/logo3.png" alt="Emporium Logo" className="h-10 w-auto" />
           </Link>
 
-          {/* Desktop Navigation */}
+
           <div className="hidden md:flex items-center space-x-4">
             <Link to="/" className="text-gray-700 dark:text-gray-300 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
               Home
@@ -106,7 +106,7 @@ const Navbar = () => {
             )}
           </div>
 
-          {/* Mobile Menu Button & Cart */}
+
           <div className="md:hidden flex items-center space-x-2">
             <Link to="/cart" className="relative p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
               <ShoppingCartIcon className="h-5 w-5 text-gray-600 dark:text-gray-300" />
@@ -129,7 +129,7 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Mobile Menu */}
+
         {mobileMenuOpen && (
           <div className="md:hidden border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900">
             <div className="px-2 pt-2 pb-3 space-y-1">

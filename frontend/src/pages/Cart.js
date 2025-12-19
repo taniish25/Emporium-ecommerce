@@ -24,7 +24,6 @@ const Cart = () => {
     }
     
     try {
-      // Create order data
       const orderData = {
         items: cart.map(item => ({
           product: item.product._id,
@@ -49,11 +48,9 @@ const Cart = () => {
         }
       };
       
-      // Call API to create order
       const response = await API.post('/orders', orderData);
       
       if (response.data) {
-        // Clear cart after successful order
         await clearCart();
         
         toast.success('Order placed successfully!');
@@ -152,7 +149,7 @@ const Cart = () => {
             </div>
           ) : (
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-              {/* Cart Items */}
+
               <div className="lg:col-span-2">
                 <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm overflow-hidden">
                   <div className="px-6 py-4 border-b border-gray-200 dark:border-gray-700">
@@ -221,7 +218,6 @@ const Cart = () => {
                 </div>
               </div>
 
-              {/* Order Summary */}
               <div className="lg:col-span-1">
                 <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6">
                   <h2 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-6">
@@ -288,7 +284,6 @@ const Cart = () => {
                   </div>
                 </div>
 
-                {/* Promo Code */}
                 <div className="mt-6 bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6">
                   <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4">
                     Have a promo code?
@@ -305,7 +300,6 @@ const Cart = () => {
                   </div>
                 </div>
 
-                {/* Continue Shopping */}
                 <div className="mt-6">
                   <Link
                     to="/products"
