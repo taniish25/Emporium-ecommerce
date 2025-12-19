@@ -22,7 +22,7 @@ export const CartProvider = ({ children }) => {
     if (!user) return;
     
     try {
-      const { data } = await API.get('/cart');
+      const { data } = await API.get('/api/cart');
       setCart(data);
     } catch (error) {
       console.error('Failed to fetch cart:', error);
@@ -35,7 +35,7 @@ export const CartProvider = ({ children }) => {
     }
 
     try {
-      await API.post('/cart', { productId, quantity });
+      await API.post('/api/cart', { productId, quantity });
       await fetchCart();
       return { success: true };
     } catch (error) {
@@ -45,7 +45,7 @@ export const CartProvider = ({ children }) => {
 
   const updateQuantity = async (productId, quantity) => {
     try {
-      await API.put(`/cart/${productId}`, { quantity });
+      await API.put(`/api/cart/${productId}`, { quantity });
       await fetchCart();
     } catch (error) {
       console.error('Failed to update cart:', error);
@@ -55,7 +55,7 @@ export const CartProvider = ({ children }) => {
 
   const removeFromCart = async (productId) => {
     try {
-      await API.delete(`/cart/${productId}`);
+      await API.delete(`/api/cart/${productId}`);
       await fetchCart();
       toast.success('Item removed from cart');
     } catch (error) {
@@ -67,7 +67,7 @@ export const CartProvider = ({ children }) => {
   const clearCart = async () => {
     try {
       for (const item of cart) {
-        await API.delete(`/cart/${item.product._id}`);
+        await API.delete(`/api/cart/${item.product._id}`);
       }
       setCart([]);
       toast.success('Cart cleared');
