@@ -37,7 +37,7 @@ const Profile = () => {
 
   const fetchProfile = async () => {
     try {
-      const { data } = await API.get('/profile');
+      const { data } = await API.get('/api/profile');
       setProfile(data);
       setFormData({
         name: data.name,
@@ -81,7 +81,7 @@ const Profile = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await API.put('/profile', formData);
+      await API.put('/api/profile', formData);
       await fetchProfile();
       setEditing(false);
       toast.success('Profile updated successfully');
@@ -101,7 +101,7 @@ const Profile = () => {
   return (
     <>
       <Helmet>
-        <title>My Profile - MERNShop</title>
+        <title>My Profile - EMPORIUM</title>
       </Helmet>
 
       <div className="min-h-screen bg-gray-50 dark:bg-gray-900 py-8">
