@@ -19,7 +19,7 @@ const ProductDetails = () => {
 
   const fetchProduct = async () => {
     try {
-      const { data } = await API.get(`/products/${id}`);
+      const { data } = await API.get(`/api/products/${id}`);
       setProduct(data);
       setLoading(false);
     } catch (error) {
@@ -31,7 +31,7 @@ const ProductDetails = () => {
   const handleAddToCart = async () => {
     if (!user) {
       alert('Please login to add items to cart');
-      navigate('/login');
+      navigate('/api/login');
       return;
     }
 
@@ -57,7 +57,7 @@ const ProductDetails = () => {
         <div className="text-center">
           <h2 className="text-2xl font-bold mb-4">Product not found</h2>
           <button
-            onClick={() => navigate('/products')}
+            onClick={() => navigate('/api/products')}
             className="btn-primary"
           >
             Browse Products
@@ -148,7 +148,7 @@ const ProductDetails = () => {
                 {user ? 'Add to Cart' : 'Login to Buy'}
               </button>
               <button
-                onClick={() => navigate('/cart')}
+                onClick={() => navigate('/api/cart')}
                 className="btn-secondary py-3 px-6 text-lg"
               >
                 View Cart
