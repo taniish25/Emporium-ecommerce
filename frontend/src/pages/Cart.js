@@ -14,7 +14,7 @@ const Cart = () => {
   const handleCheckout = async () => {
     if (!user) {
       toast.error('Please login to checkout');
-      navigate('/login');
+      navigate('/api/login');
       return;
     }
     
@@ -48,13 +48,13 @@ const Cart = () => {
         }
       };
       
-      const response = await API.post('/orders', orderData);
+      const response = await API.post('/api/orders', orderData);
       
       if (response.data) {
         await clearCart();
         
         toast.success('Order placed successfully!');
-        navigate('/order-history');
+        navigate('/api/order-history');
       }
     } catch (error) {
       console.error('Order creation error:', error);
@@ -110,7 +110,7 @@ const Cart = () => {
   return (
     <>
       <Helmet>
-        <title>MERNShop - Shopping Cart</title>
+        <title>EMPORIUM - Shopping Cart</title>
       </Helmet>
 
       <div className="min-h-screen bg-gray-50 dark:bg-gray-900 py-8">
